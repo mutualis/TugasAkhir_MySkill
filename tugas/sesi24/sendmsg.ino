@@ -1,11 +1,9 @@
 #include <WiFi.h>
 #include <PubSubClient.h>
 
-// Ganti dengan kredensial Wi-Fi Anda
 const char* ssid = "EWS";
 const char* password = "00000000";
 
-// Server MQTT HiveMQ (gunakan broker publik HiveMQ di sini)
 const char* mqtt_server = "broker.hivemq.com";
 
 // Username dan Password untuk autentikasi
