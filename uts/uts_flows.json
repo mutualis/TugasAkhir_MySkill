@@ -1,0 +1,750 @@
+[
+    {
+        "id": "95db9fa31f42994c",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "f58c762016a5f956",
+        "type": "mqtt in",
+        "z": "95db9fa31f42994c",
+        "name": "",
+        "topic": "MySkill/Suhu",
+        "qos": "1",
+        "datatype": "auto-detect",
+        "broker": "1dafc80d27a4e094",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 870,
+        "y": 360,
+        "wires": [
+            [
+                "832ad81c36c256dc",
+                "908963cb40c558f3",
+                "afaf79af5a8b5063",
+                "fc2a21d87548d67f"
+            ]
+        ]
+    },
+    {
+        "id": "832ad81c36c256dc",
+        "type": "ui_gauge",
+        "z": "95db9fa31f42994c",
+        "name": "",
+        "group": "5012e65e053abf23",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Suhu",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 1290,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "908963cb40c558f3",
+        "type": "ui_chart",
+        "z": "95db9fa31f42994c",
+        "name": "",
+        "group": "5012e65e053abf23",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Suhu",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "x": 1290,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "683d486249f691f5",
+        "type": "mqtt in",
+        "z": "95db9fa31f42994c",
+        "name": "",
+        "topic": "MySkill/Kelembapan",
+        "qos": "1",
+        "datatype": "auto-detect",
+        "broker": "1dafc80d27a4e094",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 890,
+        "y": 240,
+        "wires": [
+            [
+                "a1622d6ca7576c66",
+                "6e5e4683eabd8d20"
+            ]
+        ]
+    },
+    {
+        "id": "a1622d6ca7576c66",
+        "type": "ui_gauge",
+        "z": "95db9fa31f42994c",
+        "name": "",
+        "group": "f505cb17a68e0511",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Kelembaban",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 1310,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "6e5e4683eabd8d20",
+        "type": "ui_chart",
+        "z": "95db9fa31f42994c",
+        "name": "",
+        "group": "f505cb17a68e0511",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Kelembaban",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "x": 1310,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "311dd1687318aefb",
+        "type": "inject",
+        "z": "95db9fa31f42994c",
+        "name": "Sensor Suhu",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "18",
+        "payloadType": "num",
+        "x": 250,
+        "y": 260,
+        "wires": [
+            [
+                "59d7348cae039f71"
+            ]
+        ]
+    },
+    {
+        "id": "0d81003642a45c49",
+        "type": "inject",
+        "z": "95db9fa31f42994c",
+        "name": "Kelembapan",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "num",
+        "x": 250,
+        "y": 400,
+        "wires": [
+            [
+                "96f195c1477c907d"
+            ]
+        ]
+    },
+    {
+        "id": "59d7348cae039f71",
+        "type": "mqtt out",
+        "z": "95db9fa31f42994c",
+        "name": "",
+        "topic": "MySkill/Suhu",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "35925b18203d029f",
+        "x": 550,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "96f195c1477c907d",
+        "type": "mqtt out",
+        "z": "95db9fa31f42994c",
+        "name": "",
+        "topic": "MySkill/Kelembapan",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "35925b18203d029f",
+        "x": 580,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "1223655b566cba0f",
+        "type": "mqtt out",
+        "z": "95db9fa31f42994c",
+        "name": "",
+        "topic": "MySkill/Lampu",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "35925b18203d029f",
+        "x": 560,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "0bf863fac8ce139a",
+        "type": "inject",
+        "z": "95db9fa31f42994c",
+        "name": "Sensor Kelembapan",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "num",
+        "x": 270,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b5907d4902c0f12e",
+        "type": "inject",
+        "z": "95db9fa31f42994c",
+        "name": "Lampu",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 230,
+        "y": 580,
+        "wires": [
+            [
+                "1223655b566cba0f"
+            ]
+        ]
+    },
+    {
+        "id": "aae07ed81e437977",
+        "type": "mqtt in",
+        "z": "95db9fa31f42994c",
+        "name": "",
+        "topic": "MySkill/Lampu",
+        "qos": "1",
+        "datatype": "auto-detect",
+        "broker": "1dafc80d27a4e094",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 880,
+        "y": 580,
+        "wires": [
+            [
+                "60c026d6619de49c",
+                "aa3be0efb48079cc"
+            ]
+        ]
+    },
+    {
+        "id": "a5c13823286152de",
+        "type": "ui_switch",
+        "z": "95db9fa31f42994c",
+        "name": "",
+        "label": "Switch Lampu",
+        "tooltip": "",
+        "group": "7550767f75128ea5",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "x": 260,
+        "y": 540,
+        "wires": [
+            [
+                "1223655b566cba0f"
+            ]
+        ]
+    },
+    {
+        "id": "47473a5b0e8e13da",
+        "type": "ui_slider",
+        "z": "95db9fa31f42994c",
+        "name": "",
+        "label": "Kontrol Suhu",
+        "tooltip": "",
+        "group": "5012e65e053abf23",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": 0,
+        "max": "100",
+        "step": 1,
+        "x": 250,
+        "y": 200,
+        "wires": [
+            [
+                "59d7348cae039f71"
+            ]
+        ]
+    },
+    {
+        "id": "cd8d869846bcdba1",
+        "type": "ui_slider",
+        "z": "95db9fa31f42994c",
+        "name": "",
+        "label": "Kontrol Kelembapan",
+        "tooltip": "",
+        "group": "f505cb17a68e0511",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": 0,
+        "max": "100",
+        "step": 1,
+        "x": 280,
+        "y": 360,
+        "wires": [
+            [
+                "96f195c1477c907d"
+            ]
+        ]
+    },
+    {
+        "id": "60c026d6619de49c",
+        "type": "function",
+        "z": "95db9fa31f42994c",
+        "name": "function 1",
+        "func": "if(msg.payload === true){\n    msg.payload = 'Hidup';\n}else{\n    msg.payload = 'Mati';\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1100,
+        "y": 580,
+        "wires": [
+            [
+                "f13dd4aa31020edf"
+            ]
+        ]
+    },
+    {
+        "id": "f13dd4aa31020edf",
+        "type": "ui_text",
+        "z": "95db9fa31f42994c",
+        "group": "b48fafa9067b6920",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Lampu",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 1290,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "29157de81243330b",
+        "type": "ui_text",
+        "z": "95db9fa31f42994c",
+        "group": "b48fafa9067b6920",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Pendingin",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 1300,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "e629ca782643a3b0",
+        "type": "ui_text",
+        "z": "95db9fa31f42994c",
+        "group": "b48fafa9067b6920",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Pemanas",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 1300,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "afaf79af5a8b5063",
+        "type": "function",
+        "z": "95db9fa31f42994c",
+        "name": "function 2",
+        "func": "if(msg.payload > 30){\n    msg.payload = 'Hidup';\n}else{\n    msg.payload = 'Mati';\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1100,
+        "y": 460,
+        "wires": [
+            [
+                "29157de81243330b"
+            ]
+        ]
+    },
+    {
+        "id": "fc2a21d87548d67f",
+        "type": "function",
+        "z": "95db9fa31f42994c",
+        "name": "function 3",
+        "func": "if(msg.payload < 28){\n    msg.payload = 'Hidup';\n}else{\n    msg.payload = 'Mati';\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1100,
+        "y": 500,
+        "wires": [
+            [
+                "e629ca782643a3b0"
+            ]
+        ]
+    },
+    {
+        "id": "c1be02492aaa3dce",
+        "type": "ui_chart",
+        "z": "95db9fa31f42994c",
+        "name": "",
+        "group": "7550767f75128ea5",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Lampu",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "1",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "x": 1290,
+        "y": 640,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "aa3be0efb48079cc",
+        "type": "function",
+        "z": "95db9fa31f42994c",
+        "name": "function 4",
+        "func": "if(msg.payload === true){\n    msg.payload = 1;\n}else{\n    msg.payload = 0;\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1100,
+        "y": 640,
+        "wires": [
+            [
+                "c1be02492aaa3dce"
+            ]
+        ]
+    },
+    {
+        "id": "1dafc80d27a4e094",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "broker.mqtt-dashboard.com",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "5012e65e053abf23",
+        "type": "ui_group",
+        "name": "Suhu",
+        "tab": "838779ad99a78633",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false
+    },
+    {
+        "id": "f505cb17a68e0511",
+        "type": "ui_group",
+        "name": "Kelembaban",
+        "tab": "838779ad99a78633",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "35925b18203d029f",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "broker.mqtt-dashboard.com",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "7550767f75128ea5",
+        "type": "ui_group",
+        "name": "Lampu",
+        "tab": "838779ad99a78633",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "b48fafa9067b6920",
+        "type": "ui_group",
+        "name": "Aktuator",
+        "tab": "838779ad99a78633",
+        "order": 7,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "838779ad99a78633",
+        "type": "ui_tab",
+        "name": "Dashboard by Muhammad Ridho Assidiqi",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
